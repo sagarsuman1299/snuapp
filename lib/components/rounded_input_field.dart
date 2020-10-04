@@ -4,7 +4,6 @@ import 'package:snuapp/constants.dart';
 
 ///////////Rounded empty text fileds where user fill data//////////////
 //////Faltu url: https://docs.google.com/document/d/1N3BchEBDIvELrKtr8-1OdSYvAtv65GbOM-F10AoA0EE/edit#
-//// new code added
 class RoundedInputField extends StatelessWidget {
   final String hintText;
   final IconData icon;
@@ -19,18 +18,27 @@ class RoundedInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+
+
+
+      children: TextField(
         onChanged: onChanged,
+
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           icon: Icon(
             icon,
             color: kPrimaryColor,
           ),
+
           hintText: hintText,
           border: InputBorder.none,
         ),
       ),
+
+
+
+
     );
   }
 }

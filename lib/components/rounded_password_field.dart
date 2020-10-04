@@ -20,7 +20,7 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      children: TextField(
         obscureText: vis,
         onChanged: widget.onChanged,
         cursorColor: kPrimaryColor,

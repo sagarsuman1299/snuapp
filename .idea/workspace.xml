@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cdece13-79da-485f-ab4b-74a99216d1fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/Signup/components/body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/Signup/components/body.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/rounded_input_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/rounded_input_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/rounded_password_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/rounded_password_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/text_field_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/text_field_container.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="85" y="71" key="#Intentions" timestamp="1601829578892">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="85" y="71" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1601829578892" />
     <state x="0" y="147" key="#PSD" timestamp="1601711150232">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

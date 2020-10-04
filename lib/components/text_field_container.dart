@@ -3,10 +3,10 @@ import 'package:snuapp/constants.dart';
 
 /////////Container how app looks overall//////////
 class TextFieldContainer extends StatelessWidget {
-  final Widget child;
+  final Widget children;
   const TextFieldContainer({
     Key key,
-    this.child,
+    this.children,
   }) : super(key: key);
 
   @override
@@ -20,7 +20,7 @@ class TextFieldContainer extends StatelessWidget {
         color: kPrimaryLightColor,
         borderRadius: BorderRadius.circular(29),
       ),
-      child: child,
+      child: children,
     );
   }
 }
