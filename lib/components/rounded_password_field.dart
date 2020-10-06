@@ -4,12 +4,14 @@ import 'package:snuapp/constants.dart';
 
 //////password field lock,eye stuffs/////////////
 bool vis=true;
+
 class RoundedPasswordField extends StatefulWidget {
- // bool vis=true;
-  final ValueChanged<String> onChanged;
+   final ValueChanged<String> onChanged;
+
+  final validator;
   const RoundedPasswordField({
     Key key,
-    this.onChanged,
+    this.onChanged,this.validator
   }) : super(key: key);
 
   @override
@@ -20,10 +22,15 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      children: TextField(
+
+      children: TextFormField(
+
         obscureText: vis,
         onChanged: widget.onChanged,
         cursorColor: kPrimaryColor,
+        validator: (value)
+        {
+        },
         decoration: InputDecoration(
           hintText: "Password",
           icon: Icon(

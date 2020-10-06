@@ -6,7 +6,12 @@ import 'package:snuapp/components/rounded_button.dart';
 import 'package:snuapp/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
