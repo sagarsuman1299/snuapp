@@ -25,13 +25,12 @@ class _BodyState extends State<Body> {
               children: [
                 Text(
                   "Hola Kgpians",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
 
                 ),
                 SizedBox(height: size.height * 0.01),
                 Text(
                   "WELCOME TO SNU",
-                  style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
 
               ],
