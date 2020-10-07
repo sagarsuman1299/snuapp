@@ -33,7 +33,9 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
         onChanged: widget.onChanged,
         validator: (value)
         {
-
+          if(value.isEmpty){ return "Email is empty";}
+          if(!value.contains("@")){return "invalid email";}
+          else{ return null; }
         },
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
