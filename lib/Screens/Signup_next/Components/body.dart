@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snuapp/Screens/Login/login_screen.dart';
-import 'package:snuapp/Screens/Signup_next/';
+import 'package:snuapp/Screens/Signup_next/Components/background.dart';
 
 import 'package:snuapp/components/already_have_an_account_acheck.dart';
 import 'package:snuapp/components/rounded_button.dart';
