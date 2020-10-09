@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:snuapp/Screens/Login/login_screen.dart';
 import 'package:snuapp/Screens/Signup/components/background.dart';
 import 'package:snuapp/Screens/Signup/components/or_divider.dart';
@@ -8,6 +9,7 @@ import 'package:snuapp/components/rounded_input_field.dart';
 import 'package:snuapp/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:share/share.dart';
+import '../../../validation/signup_validation.dart';
 
 class Body extends StatelessWidget {
   void share (BuildContext context)
@@ -20,6 +22,7 @@ class Body extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
+    final validationService = Provider.of<SignupValidation>(context);
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
@@ -37,16 +40,25 @@ class Body extends StatelessWidget {
             ),
             RoundedInputField(
               hintText: "Your Institute Email",
-              onChanged: (value) {
+              errorEmail:SignupValidation().email.error,
+              onChanged: (String value) {
+                validationService.changeEmail(value);
               },
             ),
 
             RoundedPasswordField(
-              onChanged: (value) {},
+              errorPassword: SignupValidation().password.error,
+              onChanged: (String value) {
+                
+                validationService.changeEmail(value);
+              },
+
             ),
             RoundedButton(
               text: "SIGNUP",
-              press: () {},
+              press: () {
+                !validationService.isValid?null:validationService.submitData();
+              },
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(

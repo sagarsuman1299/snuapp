@@ -5,7 +5,7 @@ import 'package:snuapp/constants.dart';
 ///////////Rounded empty text fileds where user fill data//////////////
 //////Faltu url: https://docs.google.com/document/d/1N3BchEBDIvELrKtr8-1OdSYvAtv65GbOM-F10AoA0EE/edit#
 class RoundedInputField extends StatefulWidget {
-  final String hintText;
+  final String hintText,errorEmail;
   final IconData icon;
 
   final ValueChanged<String> onChanged;
@@ -13,7 +13,7 @@ class RoundedInputField extends StatefulWidget {
   final validator;
   const RoundedInputField({
     Key key,
-    this.hintText,
+    this.hintText,this.errorEmail,
     this.icon = Icons.person,
     this.onChanged,this.validator
   }) : super(key: key);
@@ -31,12 +31,12 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
 
       children: TextFormField(
         onChanged: widget.onChanged,
-        validator: (value)
-        {
-          if(value.isEmpty){ return "Email is empty";}
-          if(!value.contains("@")){return "invalid email";}
-          else{ return null; }
-        },
+        // validator: (value)
+        // {
+        //   if(value.isEmpty){ return "Email is empty";}
+        //   if(!value.contains("@")){return "invalid email";}
+        //   else{ return null; }
+        // },
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           icon: Icon(
@@ -45,6 +45,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
           ),
 
           hintText: widget.hintText,
+          errorText: widget.errorEmail,
           border: InputBorder.none,
         ),
       ),
