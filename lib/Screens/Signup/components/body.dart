@@ -57,8 +57,18 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "SIGNUP",
               press: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) {
+   // return SignUpNext() ;
+    },
+    ),
+    );
+    //  !validationService.isValid?null:validationService.submitData();
+  },
               //  !validationService.isValid?null:validationService.submitData();
-              },
+              
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
