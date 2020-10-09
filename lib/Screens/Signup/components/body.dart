@@ -9,10 +9,17 @@ import 'package:snuapp/components/rounded_input_field.dart';
 import 'package:snuapp/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:share/share.dart';
-import '../../../validation/signup_validation.dart';
 import 'package:snuapp/Screens/Signup_next/Signup_next.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+   var EmailError,PasswordError;
+
   void share (BuildContext context)
   {
     final RenderBox box = context.findRenderObject();
@@ -21,10 +28,10 @@ class Body extends StatelessWidget {
 
         sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
   }
+
   @override
   Widget build(BuildContext context) {
-    final validationService = Provider.of<SignupValidation>(context);
-    Size size = MediaQuery.of(context).size;
+ Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
         child: Column(
@@ -41,36 +48,49 @@ class Body extends StatelessWidget {
             ),
             RoundedInputField(
               hintText: "Your Institute Email",
-              errorEmail:SignupValidation().email.error,
+              errorEmail:EmailError,
               onChanged: (String value) {
-                validationService.changeEmail(value);
+                setState(() {
+                  if(value.contains("iitkgp.ac.in")){
+                    EmailError=null;
+                  }
+                  else{
+                    EmailError="Enter Institute Email Id";
+                  }
+
+                });
+
               },
             ),
 
             RoundedPasswordField(
-              errorPassword: SignupValidation().password.error,
+              errorPassword: PasswordError,
+              hintText: "Password",
               onChanged: (String value) {
-
-                validationService.changeEmail(value);
+                setState(() {
+                  if(value.length < 4){
+                    PasswordError="Password can't be less than 4 characters";
+                  }
+                  else{
+                    PasswordError=null;
+                  }
+                });
               },
 
             ),
             RoundedButton(
               text: "SIGNUP",
               press: () {
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) {
-   return SignUpNext() ;
-    },
-    ),
-    );
-    //  !validationService.isValid?null:validationService.submitData();
-  },
-              //  !validationService.isValid?null:validationService.submitData();
-
-            ),
+                    Navigator.push(
+                    context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                         return SignUpNext() ;
+                          },
+                      ),
+                    );
+   },
+              ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
               login: false,

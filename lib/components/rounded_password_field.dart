@@ -6,13 +6,13 @@ import 'package:snuapp/constants.dart';
 bool vis=true;
 
 class RoundedPasswordField extends StatefulWidget {
-  final String errorPassword;
+  final String hintText,errorPassword;
    final ValueChanged<String> onChanged;
 
   final validator;
   const RoundedPasswordField({
     Key key,
-    this.onChanged,this.validator,this.errorPassword,
+    this.onChanged,this.validator,this.errorPassword,this.hintText,
   }) : super(key: key);
 
   @override
@@ -33,7 +33,7 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
         // {
         // },
         decoration: InputDecoration(
-          hintText: "Password",
+          hintText: widget.hintText,
           errorText: widget.errorPassword,
           icon: Icon(
             Icons.lock,
@@ -46,7 +46,6 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
               setState(() {
                 vis=!vis;
               });
-            // vis=!vis;
             }
           ),
           border: InputBorder.none,

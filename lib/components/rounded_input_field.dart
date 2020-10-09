@@ -37,6 +37,7 @@ class _RoundedInputFieldState extends State<RoundedInputField> {
         //   if(!value.contains("@")){return "invalid email";}
         //   else{ return null; }
         // },
+        
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           icon: Icon(
