@@ -68,7 +68,7 @@ class Body extends StatelessWidget {
     //  !validationService.isValid?null:validationService.submitData();
   },
               //  !validationService.isValid?null:validationService.submitData();
-              
+
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
