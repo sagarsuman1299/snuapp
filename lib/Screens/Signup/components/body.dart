@@ -10,6 +10,7 @@ import 'package:snuapp/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:share/share.dart';
 import '../../../validation/signup_validation.dart';
+import 'package:snuapp/Screens/Signup_next/Signup_next.dart';
 
 class Body extends StatelessWidget {
   void share (BuildContext context)
@@ -61,7 +62,7 @@ class Body extends StatelessWidget {
     context,
     MaterialPageRoute(
     builder: (context) {
-   // return SignUpNext() ;
+   return SignUpNext() ;
     },
     ),
     );
