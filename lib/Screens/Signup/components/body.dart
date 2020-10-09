@@ -49,7 +49,7 @@ class Body extends StatelessWidget {
             RoundedPasswordField(
               errorPassword: SignupValidation().password.error,
               onChanged: (String value) {
-                
+
                 validationService.changeEmail(value);
               },
 
@@ -57,7 +57,7 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "SIGNUP",
               press: () {
-                !validationService.isValid?null:validationService.submitData();
+              //  !validationService.isValid?null:validationService.submitData();
               },
             ),
             SizedBox(height: size.height * 0.03),
